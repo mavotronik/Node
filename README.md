@@ -21,20 +21,20 @@ Actual instructions to [install](https://docs.docker.com/engine/install/ubuntu/)
 ```
 git clone https://github.com/AploCoin/Node -b dev node
 ```
-4. Edit  .env file.  Replace IP address in the ANNOUNCE_ADDRESS field to your
+Clone this repo
 ```
-ANNOUNCE_ADDRESS="yourIP:5050"
+git clone https://github.com/AploCoin/Node -b docker_multiarch node_docker_multiarch
 ```
-5. Build the docker image
+4. Build the docker image
 ```
 docker build -t aplo_node:latest ARCH=amd64
 ```
 ### Optional
-6. Pack the image into archive
+5. Pack the image into archive
 ```
 docker save -o aplo_node_amd64.tar aplo_node:latest
 ```
-6.1 Unpack the image
+5.1 Unpack the image
 ```
 docker load aplo_node_amd64.tar
 ```
