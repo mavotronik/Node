@@ -27,7 +27,7 @@ git clone https://github.com/AploCoin/Node -b docker_multiarch node_docker_multi
 ```
 4. Build the docker image
 ```
-docker build -t aplo_node:latest ARCH=amd64
+docker build -t aplo_node:latest ARCH=amd64 ../node
 ```
 ### Optional
 5. Pack the image into archive
