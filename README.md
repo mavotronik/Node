@@ -1,21 +1,22 @@
 # Node
 *  [Переключить на Русский](https://github.com/AploCoin/Node/blob/dev/README_ru.md)
-## Installation
-There is 2 methods of installation: 
-- Docker (tested on Ubuntu 22.04)
-- From source (tested on Ubuntu 18.04, Debian 12, Termux 0.118.0) 
+## Multiarch build image
+Rust support 4 arch to build:
+- amd64
+- arm32/v7
+- arm64/v8
+- i386
 
-### Docker
 1. Update list of packages and install some need packages
 ```
 sudo apt update
-sudo apt install -y nano mc git curl
+sudo apt install -y nano git curl
 ```
 2. Install Docker
 
 Actual instructions to [install](https://docs.docker.com/engine/install/ubuntu/) Docker
 
-3. Clone this repo
+3. Clone dev repo
 
 ```
 git clone https://github.com/AploCoin/Node -b dev node
@@ -24,40 +25,11 @@ git clone https://github.com/AploCoin/Node -b dev node
 ```
 ANNOUNCE_ADDRESS="yourIP:5050"
 ```
-5. Build the docker container
+5. Build the docker image
 ```
-docker build -t aplo_node:latest .
+docker build -t aplo_node:latest ARCH="amd64"
 ```
-6. Run container
+6. Pack the image into archive
 ```
-mkdir logs
-docker run --network host --name aplo_node -v $(pwd)/logs:/Node/logs aplo_node
-```
-
-### From source
-1. Update list of packages and install some need packages
-```
-sudo apt update
-sudo apt install -y curl git nano build-essential binutils
-```
-2. Install Rust
-```
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-3. Clone this repo
-
-```
-git clone https://github.com/AploCoin/Node -b dev node
-```
-4. Edit  .env file.  Replace IP address in the ANNOUNCE_ADDRESS field to your
-```
-ANNOUNCE_ADDRESS="yourIP:5050"
-```
-5. Build node
-```
-cargo build --release
-```
-6. Run node
-```
-cargo run --release
+docker save -o aplo_node_amd64.tar aplo_node:latest
 ```
