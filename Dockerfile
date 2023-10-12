@@ -1,4 +1,6 @@
-FROM rust:latest as builder
+ARG ARCH=
+FROM ${ARCH}/rust:latest as builder
+
 WORKDIR /Node
 COPY . .
 
