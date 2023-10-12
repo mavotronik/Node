@@ -27,9 +27,14 @@ ANNOUNCE_ADDRESS="yourIP:5050"
 ```
 5. Build the docker image
 ```
-docker build -t aplo_node:latest ARCH="amd64"
+docker build -t aplo_node:latest ARCH=amd64
 ```
+### Optional
 6. Pack the image into archive
 ```
 docker save -o aplo_node_amd64.tar aplo_node:latest
+```
+6.1 Unpack the image
+```
+docker load aplo_node_amd64.tar
 ```
