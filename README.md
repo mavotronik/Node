@@ -21,20 +21,15 @@ Actual instructions to [install](https://docs.docker.com/engine/install/ubuntu/)
 ```
 git clone https://github.com/AploCoin/Node -b dev node
 ```
-Clone this repo
-```
-git clone https://github.com/AploCoin/Node -b docker_multiarch node_docker_multiarch
-```
 4. Build the docker image
 ```
-docker build -t aplo_node:latest ARCH=amd64 ../node
+docker buildx build --platform=amd64 -t aplo_node_amd64:latest
 ```
-### Optional
-5. Pack the image into archive
+5. Optional: save the image to archive
 ```
-docker save -o aplo_node_amd64.tar aplo_node:latest
+docker save -o aplo_node_amd64.tar aplo_node_amd64:latest
 ```
 5.1 Unpack the image
 ```
-docker load aplo_node_amd64.tar
+docker load aplo_node_amd64:latest.tar
 ```
