@@ -10,7 +10,7 @@ Rust supports 4 architectures to build:
 1. Update list of packages and install some needed packages
 ```
 sudo apt update
-sudo apt install -y nano git curl
+sudo apt install -y git curl
 ```
 2. Install Docker
 
