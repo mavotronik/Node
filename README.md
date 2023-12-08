@@ -1,13 +1,13 @@
 # Node
 *  [Переключить на Русский](https://github.com/AploCoin/Node/blob/dev/README_ru.md)
 ## Multiarch build image
-Rust support 4 arch to build:
+Rust supports 4 architectures to build:
 - amd64
 - arm32/v7
 - arm64/v8
 - i386
 
-1. Update list of packages and install some need packages
+1. Update list of packages and install some needed packages
 ```
 sudo apt update
 sudo apt install -y nano git curl
@@ -16,7 +16,7 @@ sudo apt install -y nano git curl
 
 Actual instructions to [install](https://docs.docker.com/engine/install/ubuntu/) Docker
 
-3. Clone dev repo
+3. Clone the repo on dev branch
 
 ```
 git clone https://github.com/AploCoin/Node -b dev node
