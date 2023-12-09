@@ -29,7 +29,7 @@ docker buildx build --platform=amd64 -t aplo_node_amd64:latest .
 ```
 docker save -o aplo_node_amd64.tar aplo_node_amd64:latest
 ```
-5.1 Unpack the image
+5.1. Unpack the image
 ```
 docker load aplo_node_amd64.tar
 ```
